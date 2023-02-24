@@ -1,0 +1,28 @@
+@use "/src/styles/variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(0.6em + 1vw);
+
+  ::selection {
+    background-color: $color-wheat;
+  }
+}
+
+body {
+  background: $color-background;
+  min-height: 100vh;
+  height: auto;
+}
+
+.mat-dialog-container {
+  background-color: $color-lightBlue;
+  color: $color-darkBlue;
+  border-radius: 1rem !important;
+}

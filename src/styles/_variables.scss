@@ -1,0 +1,27 @@
+//z-index
+$z-index-nav: 999;
+$z-index-mobileMenu: 990;
+
+//breakpoint
+$breakpoint-mobile: 678px;
+
+//transition
+$anim-very-fast-ease: all 0.2s ease;
+$anim-fast-ease: all 0.3s ease;
+$anim-normal-linear: all 0.5s linear;
+
+//font-size
+$f-size-small: 0.65rem;
+$f-size-list: 0.8rem;
+$f-size-normal: 1.5rem;
+$f-size-big: 2rem;
+
+//font-family
+$f-family-poppins: "Poppins";
+
+//color
+$color-background: linear-gradient(#24325f, #3b5b5b);
+$color-wheat: #fae48b;
+$color-darkBlue: #24325f;
+$color-lightBlue: #b1daed;
+$color-white: #fff;

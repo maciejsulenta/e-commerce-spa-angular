@@ -1,0 +1,34 @@
+@use '/src/styles/variables' as *;
+@use '/src/styles/mixins' as *;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6rem;
+
+  &__text {
+    font-size: $f-size-big;
+    font-family: $f-family-poppins;
+    color: $color-lightBlue;
+  }
+
+  &__button {
+    transition: $anim-fast-ease;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    background-color: $color-darkBlue;
+    font-size: $f-size-normal;
+    font-family: $f-family-poppins;
+    color: $color-lightBlue;
+
+    &:hover {
+      background-color: $color-lightBlue;
+      color: $color-darkBlue;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use "/src/styles/variables" as *;
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+  }
+
+  &__text {
+    margin-bottom: 0.5rem;
+    font-size: $f-size-list;
+    font-family: $f-family-poppins;
+    text-align: center;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

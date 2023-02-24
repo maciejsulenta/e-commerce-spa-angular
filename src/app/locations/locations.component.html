@@ -1,0 +1,47 @@
+<div class="locations-container">
+  <div class="locations-wrap">
+    <form class="locations__filter" [formGroup]="formGroup">
+      <input formControlName="name" placeholder="Name" />
+      <input formControlName="type" placeholder="Type" />
+      <input formControlName="dimension" placeholder="Dimension" />
+
+      <button (click)="update()">Search</button>
+    </form>
+    <div class="locations">
+      <div class="locations__header">
+        <p class="location__text">Id</p>
+        <p class="location__text">Name</p>
+        <p class="location__text">Type</p>
+        <p class="location__text">Dimension</p>
+      </div>
+
+      <ul class="locations__list" *ngIf="locations.length; else noLocations">
+        <li
+          class="location"
+          *ngFor="let location of locations"
+          (click)="openLocationDialog(location)"
+        >
+          <p class="location__text">{{ location.id }}</p>
+          <p class="location__text">{{ location.name }}</p>
+          <p class="location__text">{{ location.type }}</p>
+          <p class="location__text">{{ location.dimension }}</p>
+        </li>
+
+        <app-pagination
+          [count]="totalItems"
+          [page]="page"
+          (returnPaginationData)="handlePageEvent($event)"
+        ></app-pagination>
+      </ul>
+
+      <ng-template #noLocations>
+        <div class="no-locations">
+          <h2 class="no-locations__text">No results</h2>
+          <button class="no-locations__button" (click)="navigateToLocations()">
+            click
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+@use '/src/styles/variables' as *;
+
+.mat-paginator {
+    border-radius: 1rem !important;
+    background-color: $color-darkBlue;
+    font-family: $f-family-poppins;
+}

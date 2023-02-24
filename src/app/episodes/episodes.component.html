@@ -1,0 +1,46 @@
+<div class="episodes-container">
+  <div class="episodes-wrap">
+    <form class="episodes__filter" [formGroup]="formGroup">
+      <input type="text" placeholder="Name" formControlName="name" />
+      <input type="text" placeholder="Episode" formControlName="episode" />
+      <button (click)="update()">Search</button>
+    </form>
+
+    <div class="episodes">
+      <div class="episodes__header">
+        <p class="episode__text">Id</p>
+        <p class="episode__text">Name</p>
+        <p class="episode__text">Date</p>
+        <p class="episode__text">Episode</p>
+      </div>
+
+      <ul class="episodes__list" *ngIf="episodes.length; else noEpisodes">
+        <li
+          class="episode"
+          *ngFor="let episode of episodes"
+          (click)="openEpisodeDialog(episode)"
+        >
+          <p class="episode__text">{{ episode.id }}</p>
+          <p class="episode__text">{{ episode.name }}</p>
+          <p class="episode__text">{{ episode.created.slice(0, 10) }}</p>
+          <p class="episode__text">{{ episode.episode }}</p>
+        </li>
+
+        <app-pagination
+          [count]="totalItems"
+          [page]="page"
+          (returnPaginationData)="handlePageEvent($event)"
+        ></app-pagination>
+      </ul>
+
+      <ng-template #noEpisodes>
+        <div class="no-episodes">
+          <h2 class="no-episodes__text">No results</h2>
+          <button class="no-episodes__button" (click)="navigateToEpisodes()">
+            click
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

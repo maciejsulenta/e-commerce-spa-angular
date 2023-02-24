@@ -1,0 +1,17 @@
+@use '/src/styles/variables' as *;
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: $f-size-list;
+  gap: 0.5rem;
+
+  &__text {
+    font-family: $f-family-poppins;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

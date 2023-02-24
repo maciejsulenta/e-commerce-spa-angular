@@ -1,0 +1,61 @@
+<div class="watch-list-container">
+  <div class="watch-list">
+    <form class="watch-list__add" [formGroup]="formGroup">
+      <input
+        type="text"
+        placeholder="new episode to watch"
+        formControlName="episode"
+      />
+      <button
+        [disabled]="!this.formGroup.value.episode"
+        [ngClass]="!this.formGroup.value.episode ? 'disabled' : ''"
+        (click)="addEpisode()"
+      >
+        Add
+      </button>
+    </form>
+
+    <div class="episodes-wrap">
+      <ul class="list">
+        <div class="list__header">
+          <p class="list-item__text">Episodes to watch</p>
+        </div>
+        <span *ngFor="let episode of episodes; let i = index">
+          <li class="list-item" *ngIf="episodes[i].isChecked === false">
+            <p class="list-item__text">{{ episode.name }}</p>
+            <div class="list-item__buttons">
+              <button
+                class="list-item__button"
+                (click)="removeEpisode(episode)"
+              >
+                Remove
+              </button>
+              <button class="list-item__button" (click)="checkEpisode(episode)">
+                Check
+              </button>
+            </div>
+          </li>
+        </span>
+      </ul>
+
+      <ul class="list">
+        <div class="list__header">
+          <p class="list-item__text">Episodes already watched</p>
+        </div>
+        <span *ngFor="let episodeChecked of episodes; let i = index">
+          <li class="list-item" *ngIf="episodes[i].isChecked === true">
+            <p class="list-item__text">{{ episodeChecked.name }}</p>
+            <div class="list-item__buttons">
+              <button
+                class="list-item__button"
+                (click)="removeEpisode(episodeChecked)"
+              >
+                Remove
+              </button>
+            </div>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </div>
+</div>

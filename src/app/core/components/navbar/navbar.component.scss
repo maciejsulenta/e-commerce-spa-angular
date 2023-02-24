@@ -1,0 +1,147 @@
+@use '/src/styles/variables' as *;
+@use '/src/styles/mixins' as *;
+
+.nav {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 80px;
+
+  &__logo {
+    display: none;
+
+    @include mobileMinBreakPoint {
+      position: absolute;
+      top: 0.7rem;
+      left: 2rem;
+      display: block;
+      width: 6rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.menu {
+  display: none;
+
+  @include mobileMinBreakPoint {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 25rem;
+    width: 40%;
+  }
+
+  &__item {
+    list-style: none;
+
+    &--active {
+      background-color: $color-lightBlue;
+      color: $color-darkBlue !important;
+    }
+
+    a {
+      font-size: $f-size-big;
+      font-family: $f-family-poppins;
+      white-space: nowrap;
+      text-decoration: none;
+      color: $color-darkBlue;
+
+      @include mobileMinBreakPoint {
+        transition: $anim-fast-ease;
+        border-radius: 1rem;
+        padding: 0.2rem 0.5rem;
+        font-size: $f-size-small;
+        color: $color-lightBlue;
+      }
+
+      &:hover {
+        background-color: $color-wheat;
+        color: $color-darkBlue;
+      }
+    }
+  }
+}
+
+.burger {
+  position: fixed;
+  z-index: $z-index-nav;
+  top: 1.25rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  width: 44px;
+  height: 35px;
+
+  @include mobileMinBreakPoint {
+    display: none;
+  }
+
+  &__icon {
+    transition: $anim-fast-ease;
+    border-radius: 5rem;
+    width: 38px;
+    height: 3px;
+    background-color: $color-white;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      transition: $anim-fast-ease;
+      border-radius: 5rem;
+      width: 38px;
+      height: 3px;
+      background-color: $color-white;
+    }
+
+    &::after {
+      transform: translateY(-10px);
+    }
+
+    &::before {
+      transform: translateY(10px);
+    }
+
+    &--active {
+      transform: translateX(-50px);
+
+      &::before {
+        transform: translate(50px, 0px) rotate(-45deg);
+        background-color: $color-darkBlue;
+      }
+
+      &::after {
+        transform: translate(50px, 0px) rotate(45deg);
+        background-color: $color-darkBlue;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: $z-index-mobileMenu;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(0px at 95% -10%);
+  transition: $anim-normal-linear;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-wheat;
+
+  &--active {
+    clip-path: circle(1200px at 95% -10%);
+  }
+}

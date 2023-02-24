@@ -1,0 +1,71 @@
+<div class="characters-container">
+  <div class="characters">
+    <div class="characters__header">
+      <form class="characters__filters" [formGroup]="formGroup">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" placeholder="Name" />
+
+        <label for="species">Species</label>
+        <select id="species" formControlName="species">
+          <option value=""></option>
+          <option value="Human">Human</option>
+          <option value="Humanoid">Humanoid</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select id="status" formControlName="status">
+          <option value=""></option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <label for="gender">Gender</label>
+        <select id="gender" formControlName="gender">
+          <option value=""></option>
+          <option value="male">Male</option>
+          <option value="Female">Female</option>
+          <option value="genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <button (click)="update()">Update</button>
+      </form>
+
+      <div class="characters__labels">
+        <p class="label">Photo</p>
+        <p class="label">Name</p>
+        <p class="label">Species</p>
+        <p class="label">Status</p>
+        <p class="label">Gender</p>
+      </div>
+    </div>
+
+    <ul class="characters__list" *ngIf="characters.length; else noCharacters">
+      <li
+        *ngFor="let character of characters"
+        class="character"
+        (click)="openCharacterDialog(character)"
+      >
+        <img class="character__image" src="{{ character.image }}" />
+        <p class="character__text">{{ character.name }}</p>
+        <p class="character__text">{{ character.species }}</p>
+        <p class="character__text">{{ character.status }}</p>
+        <p class="character__text">{{ character.gender }}</p>
+      </li>
+      <app-pagination
+        [count]="totalItems"
+        [page]="page"
+        (returnPaginationData)="handlePageEvent($event)"
+      ></app-pagination>
+    </ul>
+
+    <ng-template #noCharacters class="no-characters">
+      <h2 class="no-characters__text">No results</h2>
+      <button class="no-characters__button" (click)="navigateToCharacters()">
+        click
+      </button>
+    </ng-template>
+  </div>
+</div>

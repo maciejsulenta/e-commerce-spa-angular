@@ -1,0 +1,164 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+
+.locations-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid $color-wheat;
+  // min-height: 90vh;
+  // height: fit-content;
+  background-color: $color-background;
+}
+
+.locations-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto 0 auto;
+  width: 90%;
+}
+
+.locations {
+  margin-top: 1rem;
+  width: 100%;
+  font-family: $f-family-poppins;
+  color: $color-darkBlue;
+
+  &__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include mobileMinBreakPoint {
+      flex-direction: row;
+    }
+
+    input {
+      border: none;
+      border-radius: 0.2rem;
+      outline: none;
+      width: 8rem;
+      height: 2rem;
+      padding-left: 0.5rem;
+      background-color: $color-lightBlue;
+      font-size: $f-size-small;
+      font-family: $f-family-poppins;
+      color: $color-darkBlue;
+
+      &::placeholder {
+        color: $color-darkBlue;
+      }
+
+      &:focus {
+        background-color: $color-wheat;
+      }
+    }
+
+    button {
+      transition: $anim-fast-ease;
+      border: none;
+      outline: none;
+      border-radius: 0.2rem;
+      width: 8rem;
+      height: 2rem;
+      background-color: $color-lightBlue;
+      cursor: pointer;
+      font-family: $f-family-poppins;
+      color: $color-darkBlue;
+
+      &:hover {
+        background-color: $color-wheat;
+      }
+
+      @include mobileMinBreakPoint {
+        width: 8rem;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem 1rem 0 0;
+    height: 3rem;
+    padding-left: 1rem;
+    background-color: $color-wheat;
+
+    @include mobileMinBreakPoint {
+      padding-left: 2rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}
+
+.location {
+  display: flex;
+  justify-content: space-around;
+  transition: $anim-very-fast-ease;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  height: 5rem;
+  padding-left: 1rem;
+  background-color: $color-lightBlue;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  @include mobileMinBreakPoint {
+    height: 3rem;
+    padding-left: 2rem;
+  }
+
+  &__text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    font-size: $f-size-small;
+
+    &:first-of-type {
+      flex: none;
+      width: 2rem;
+
+      @include mobileMinBreakPoint {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+.no-locations {
+  text-align: center;
+
+  &__text {
+    margin: 5rem 0 1rem 0;
+    font-size: $f-size-big;
+    font-family: $f-family-poppins;
+    color: $color-lightBlue;
+  }
+
+  &__button {
+    transition: $anim-fast-ease;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem 2rem;
+    background-color: $color-lightBlue;
+    cursor: pointer;
+    font-size: $f-size-normal;
+    font-family: $f-family-poppins;
+    color: $color-darkBlue;
+
+    &:hover {
+      background-color: $color-wheat;
+    }
+  }
+}

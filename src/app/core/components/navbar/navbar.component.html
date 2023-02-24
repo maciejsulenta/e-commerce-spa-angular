@@ -1,0 +1,29 @@
+<nav class="nav">
+  <div class="nav__logo">
+    <a [routerLink]="''"
+      ><img [src]="logo" alt="rick and morty navbar logo"
+    /></a>
+  </div>
+  <ul class="menu">
+    <li class="menu__item" *ngFor="let navItem of navItems">
+      <a
+        [routerLink]="navItem.path"
+        [routerLinkActive]="'menu__item--active'"
+        >{{ navItem.label }}</a
+      >
+    </li>
+  </ul>
+  <div class="burger" (click)="handleBurger()">
+    <div
+      class="burger__icon"
+      [ngClass]="{ 'burger__icon--active': status }"
+    ></div>
+  </div>
+</nav>
+<ul class="mobile-menu" [ngClass]="status ? 'mobile-menu--active' : ''">
+  <li class="menu__item" *ngFor="let mobileMenuItem of mobileMenuItems">
+    <a [routerLink]="mobileMenuItem.path" (click)="handleBurger()">{{
+      mobileMenuItem.label
+    }}</a>
+  </li>
+</ul>
