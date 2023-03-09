@@ -6,7 +6,7 @@ import { PageEvent } from '@angular/material/paginator';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss'],
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
   @Input() count!: number;
   @Input() index!: number;
   @Input() page!: number;
@@ -16,10 +16,6 @@ export class PaginationComponent implements OnInit {
   pageSize = 20;
   pageIndex = this.page;
   showFirstLastButtons = true;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   onChange(event: PageEvent) {
     this.returnPaginationData.emit(event);

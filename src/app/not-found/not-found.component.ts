@@ -5,10 +5,8 @@ import { Router } from '@angular/router';
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss'],
 })
-export class NotFoundComponent implements OnInit {
+export class NotFoundComponent {
   constructor(private router: Router) {}
-
-  ngOnInit(): void {}
 
   navigateToHomePage() {
     this.router.navigate(['']);
