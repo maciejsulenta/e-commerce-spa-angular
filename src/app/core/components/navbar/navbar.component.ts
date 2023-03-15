@@ -19,6 +19,5 @@ export class NavbarComponent {
 
   public handleBurger(): void {
     this.status = !this.status;
-    console.log(this.mobileMenuItems);
   }
 }
