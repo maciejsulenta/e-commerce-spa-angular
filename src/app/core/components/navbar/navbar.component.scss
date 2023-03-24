@@ -135,6 +135,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   clip-path: circle(0px at 95% -10%);
   transition: $anim-normal-linear;
   width: 100%;
