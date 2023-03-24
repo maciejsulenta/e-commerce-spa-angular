@@ -3,7 +3,7 @@
     <div class="characters__header">
       <form class="characters__filters" [formGroup]="formGroup">
         <label for="name">Name</label>
-        <input id="name" formControlName="name" placeholder="Name" />
+        <input id="name" formControlName="name" />
 
         <label for="species">Species</label>
         <select id="species" formControlName="species">
@@ -30,7 +30,7 @@
           <option value="unknown">Unknown</option>
         </select>
 
-        <button (click)="update()">Update</button>
+        <button (click)="updateCharacters()">Update</button>
       </form>
 
       <div class="characters__labels">
