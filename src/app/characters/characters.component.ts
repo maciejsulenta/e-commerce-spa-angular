@@ -64,12 +64,12 @@ export class CharactersComponent implements OnInit, OnDestroy {
       });
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
 
-  private getData(params: FilterParams) {
+  private getData(params: FilterParams): void {
     this.charactersService
       .getCharacters(params)
       .pipe(
@@ -85,7 +85,7 @@ export class CharactersComponent implements OnInit, OnDestroy {
       });
   }
 
-  public handlePageEvent(event: PageEvent) {
+  public handlePageEvent(event: PageEvent): void {
     const currentPage = event.pageIndex + 1;
 
     this.router.navigate(['/characters'], {
@@ -99,7 +99,7 @@ export class CharactersComponent implements OnInit, OnDestroy {
     });
   }
 
-  public update(): void {
+  public updateCharacters(): void {
     this.filters = this.formGroup.value;
 
     this.charactersService
@@ -118,14 +118,14 @@ export class CharactersComponent implements OnInit, OnDestroy {
     });
   }
 
-  public openCharacterDialog(character: Character) {
+  public openCharacterDialog(character: Character): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: 'fit-content',
       data: character,
     });
   }
 
-  public navigateToCharacters() {
+  public navigateToCharacters(): void {
     this.router.navigateByUrl('/characters');
   }
 }
