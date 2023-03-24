@@ -1,5 +1,5 @@
-@use '/src/styles/variables' as *;
-@use '/src/styles/mixins' as *;
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
 
 .watch-list-container {
   display: flex;
@@ -104,9 +104,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
   border-radius: 1rem;
-  width: 100%;
   height: 3rem;
   padding: 0 1rem;
   list-style: none;
