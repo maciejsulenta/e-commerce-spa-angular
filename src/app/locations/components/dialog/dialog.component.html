@@ -1,11 +1,17 @@
 <div class="dialog-wrap">
-    <div class="dialog">
-      <p class="dialog__text">Id: {{ location.id }}</p>
-      <p class="dialog__text">Name: {{ location.name }}</p>
-      <p class="dialog__text">Date: {{ location.type }}</p>
-      <p class="dialog__text">Episode: {{ location.dimension }}</p>
-      <p class="dialog__text">Created at: {{ location.created.slice(0,10) }}</p>
-      <p class="dialog__text" *ngFor="let resident of location.residents.slice(0,10)">Episode: {{ resident }}</p>
-    </div>
+  <div class="dialog">
+    <p class="dialog__text"><span>Id:</span> {{ location.id }}</p>
+    <p class="dialog__text"><span>Name:</span> {{ location.name }}</p>
+    <p class="dialog__text"><span>Date: </span>{{ location.type }}</p>
+    <p class="dialog__text"><span>Episode:</span> {{ location.dimension }}</p>
+    <p class="dialog__text">
+      <span>Created at:</span> {{ location.created.slice(0, 10) }}
+    </p>
+    <p
+      class="dialog__text"
+      *ngFor="let resident of location.residents.slice(0, 10)"
+    >
+      <span>Episode:</span> {{ resident }}
+    </p>
   </div>
-  
+</div>

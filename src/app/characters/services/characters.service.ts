@@ -13,7 +13,7 @@ import { Filters } from '../models/filters';
 export class CharactersService {
   constructor(private httpClient: HttpClient) {}
 
-  getCharacters(query: FilterParams): Observable<CharactersResponseBody> {
+  public getCharacters(query: FilterParams): Observable<CharactersResponseBody> {
     let params = new HttpParams().set('page', query.page);
 
     query.filters.forEach((filter) => {
@@ -25,7 +25,7 @@ export class CharactersService {
     });
   }
 
-  getFilteredCharacters(filters: Filters): Observable<Character[]> {
+  public getFilteredCharacters(filters: Filters): Observable<Character[]> {
     const params = new HttpParams()
       .set('name', filters.name)
       .set('species', filters.species)

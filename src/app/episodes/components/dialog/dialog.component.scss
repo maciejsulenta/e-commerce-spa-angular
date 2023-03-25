@@ -1,4 +1,4 @@
-@use '/src/styles/variables' as *;
+@use "/src/styles/variables" as *;
 
 .dialog {
   display: flex;
@@ -9,6 +9,10 @@
 
   &__text {
     font-family: $f-family-poppins;
+
+    span {
+      font-weight: 700;
+    }
 
     &:last-child {
       margin: 0;

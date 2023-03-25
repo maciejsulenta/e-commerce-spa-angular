@@ -12,12 +12,12 @@ export class PaginationComponent {
   @Input() page!: number;
   @Output() returnPaginationData = new EventEmitter<any>();
 
-  length = this.count;
-  pageSize = 20;
-  pageIndex = this.page;
-  showFirstLastButtons = true;
+  public length = this.count;
+  public pageSize = 20;
+  public pageIndex = this.page;
+  public showFirstLastButtons = true;
 
-  onChange(event: PageEvent) {
+  public onChange(event: PageEvent): void {
     this.returnPaginationData.emit(event);
   }
 }

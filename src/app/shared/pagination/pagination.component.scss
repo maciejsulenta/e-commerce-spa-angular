@@ -1,7 +1,13 @@
-@use '/src/styles/variables' as *;
+@use "/src/styles/variables" as *;
 
 .mat-paginator {
-    border-radius: 1rem !important;
-    background-color: $color-darkBlue;
-    font-family: $f-family-poppins;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem !important;
+  height: 3rem;
+  background-color: $color-darkBlue;
+  font-size: $f-size-small;
+  font-family: $f-family-poppins;
 }

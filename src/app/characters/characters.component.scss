@@ -1,5 +1,5 @@
-@use '/src/styles/variables' as *;
-@use '/src/styles/mixins' as *;
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
 
 .characters-container {
   display: flex;
@@ -34,7 +34,7 @@
 
     @include mobileMinBreakPoint {
       flex-direction: row;
-      gap: 1rem;
+      gap: 0.3rem;
     }
 
     input,
@@ -62,7 +62,7 @@
     input {
       padding-left: 0.5rem;
       border-radius: 0.2rem;
-      
+
       &:active {
         background-color: $color-wheat;
       }
@@ -74,7 +74,8 @@
 
     label {
       margin-top: 0.5rem;
-      font-size: $f-size-list;
+      padding-left: 0.5rem;
+      font-size: $f-size-small;
       font-family: $f-family-poppins;
       color: $color-lightBlue;
 
@@ -93,10 +94,11 @@
       background-color: $color-lightBlue;
       cursor: pointer;
       font-size: $f-size-small;
+      font-family: $f-family-poppins;
       color: $color-darkBlue;
 
       @include mobileMinBreakPoint {
-        margin: 0;
+        margin: 0 0 0 0.7rem;
       }
 
       &:hover {
@@ -113,7 +115,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 1rem 1rem 0 0;
     height: 3rem;
     background-color: $color-wheat;
@@ -127,7 +129,7 @@
 .label {
   flex: 1;
   padding-left: 0.3rem;
-  font-size: $f-size-list;
+  font-size: $f-size-small;
   font-family: $f-family-poppins;
   color: $color-darkBlue;
 
@@ -138,7 +140,7 @@
   }
 
   @include mobileMinBreakPoint {
-    padding-left: 1.7rem;
+    padding-left: 1.2rem;
   }
 }
 
@@ -147,10 +149,10 @@
   justify-content: space-between;
   align-items: center;
   transition: $anim-very-fast-ease;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 1rem;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: $color-lightBlue;
   cursor: pointer;
 
@@ -169,7 +171,7 @@
     flex: 1;
     padding-left: 0.5rem;
     cursor: pointer;
-    font-size: $f-size-list;
+    font-size: $f-size-small;
     font-family: $f-family-poppins;
     color: $color-darkBlue;
 

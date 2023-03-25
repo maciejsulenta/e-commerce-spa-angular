@@ -1,5 +1,5 @@
-@use '/src/styles/variables' as *;
-@use '/src/styles/mixins' as *;
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
 
 .episodes-container {
   display: flex;
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.3rem;
 
     @include mobileMinBreakPoint {
       flex-direction: row;
@@ -36,33 +36,38 @@
     input {
       border: none;
       border-radius: 0.2rem;
-      outline: none;
-      width: 8rem;
-      height: 2rem;
+      width: 40%;
+      height: 1.5rem;
       padding-left: 0.5rem;
       background-color: $color-lightBlue;
       font-size: $f-size-small;
-      font-family: $f-family-poppins;
       color: $color-darkBlue;
-
-      &::placeholder {
-        color: $color-darkBlue;
-      }
+      cursor: pointer;
 
       &:focus {
+        outline: none;
         background-color: $color-wheat;
+      }
+
+      &:active {
+        background-color: $color-wheat;
+      }
+
+      @include mobileMinBreakPoint {
+        width: 5rem;
       }
     }
 
     button {
       transition: $anim-fast-ease;
       border: none;
-      outline: none;
       border-radius: 0.2rem;
-      width: 8rem;
-      height: 2rem;
+      margin-top: 1rem;
+      width: 5rem;
+      height: 1.5rem;
       background-color: $color-lightBlue;
       cursor: pointer;
+      font-size: $f-size-small;
       font-family: $f-family-poppins;
       color: $color-darkBlue;
 
@@ -70,8 +75,24 @@
         background-color: $color-wheat;
       }
 
+      &:active {
+        transform: scale(1.1);
+      }
+
       @include mobileMinBreakPoint {
-        width: 4rem;
+        margin: 0 0 0 0.7rem;
+      }
+    }
+
+    label {
+      margin-top: 0.5rem;
+      padding-left: 0.5rem;
+      font-size: $f-size-small;
+      font-family: $f-family-poppins;
+      color: $color-lightBlue;
+
+      @include mobileMinBreakPoint {
+        margin: 0;
       }
     }
   }

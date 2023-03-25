@@ -1,9 +1,12 @@
 <div class="locations-container">
   <div class="locations-wrap">
     <form class="locations__filter" [formGroup]="formGroup">
-      <input formControlName="name" placeholder="Name" />
-      <input formControlName="type" placeholder="Type" />
-      <input formControlName="dimension" placeholder="Dimension" />
+      <label for="name">Name</label>
+      <input formControlName="name" id="name" />
+      <label for="type">Type</label>
+      <input formControlName="type" id="type" />
+      <label for="dimension">Dimension</label>
+      <input formControlName="dimension" id="dimension" />
 
       <button (click)="update()">Search</button>
     </form>
@@ -36,9 +39,12 @@
 
       <ng-template #noLocations>
         <div class="no-locations">
-          <h2 class="no-locations__text">No results</h2>
+          <h2 class="no-locations__text">
+            No results<br />
+            Go to main page
+          </h2>
           <button class="no-locations__button" (click)="navigateToLocations()">
-            click
+            Return
           </button>
         </div>
       </ng-template>

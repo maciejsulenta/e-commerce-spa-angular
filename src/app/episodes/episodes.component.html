@@ -1,8 +1,10 @@
 <div class="episodes-container">
   <div class="episodes-wrap">
     <form class="episodes__filter" [formGroup]="formGroup">
-      <input type="text" placeholder="Name" formControlName="name" />
-      <input type="text" placeholder="Episode" formControlName="episode" />
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" id="name" />
+      <label for="episode">Episode</label>
+      <input type="text" formControlName="episode" id="episode" />
       <button (click)="update()">Search</button>
     </form>
 
@@ -35,9 +37,12 @@
 
       <ng-template #noEpisodes>
         <div class="no-episodes">
-          <h2 class="no-episodes__text">No results</h2>
+          <h2 class="no-episodes__text">
+            No results<br />
+            Go to main page
+          </h2>
           <button class="no-episodes__button" (click)="navigateToEpisodes()">
-            click
+            Return
           </button>
         </div>
       </ng-template>
