@@ -1,8 +1,10 @@
 <div class="episodes-container">
   <div class="episodes-wrap">
     <form class="episodes__filter" [formGroup]="formGroup">
-      <input type="text" placeholder="Name" formControlName="name" />
-      <input type="text" placeholder="Episode" formControlName="episode" />
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" />
+      <label for="name">Episode</label>
+      <input type="text" formControlName="episode" />
       <button (click)="update()">Search</button>
     </form>
 
