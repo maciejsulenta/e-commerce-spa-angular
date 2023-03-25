@@ -39,9 +39,12 @@
 
       <ng-template #noLocations>
         <div class="no-locations">
-          <h2 class="no-locations__text">No results</h2>
+          <h2 class="no-locations__text">
+            No results<br />
+            Go to main page
+          </h2>
           <button class="no-locations__button" (click)="navigateToLocations()">
-            click
+            Return
           </button>
         </div>
       </ng-template>

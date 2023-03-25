@@ -62,9 +62,12 @@
     </ul>
 
     <ng-template #noCharacters class="no-characters">
-      <h2 class="no-characters__text">No results</h2>
+      <h2 class="no-characters__text">
+        No results<br />
+        Go to main page
+      </h2>
       <button class="no-characters__button" (click)="navigateToCharacters()">
-        click
+        Return
       </button>
     </ng-template>
   </div>
