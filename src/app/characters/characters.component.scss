@@ -31,18 +31,18 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+    gap: 0.3rem;
 
     @include mobileMinBreakPoint {
       flex-direction: row;
-      gap: 0.3rem;
     }
 
     input,
     select {
       border: none;
       border-radius: 0.2rem;
-      width: 40%;
-      height: 1.5rem;
+      width: 100%;
+      height: 2rem;
       padding-left: 0.5rem;
       background-color: $color-lightBlue;
       font-size: $f-size-small;
@@ -51,6 +51,7 @@
 
       @include mobileMinBreakPoint {
         width: 5rem;
+        height: 1.5rem;
       }
 
       &:focus {
@@ -89,8 +90,8 @@
       border: none;
       border-radius: 0.2rem;
       margin-top: 1rem;
-      width: 5rem;
-      height: 1.5rem;
+      width: 100%;
+      height: 2rem;
       background-color: $color-lightBlue;
       cursor: pointer;
       font-size: $f-size-small;
@@ -99,6 +100,8 @@
 
       @include mobileMinBreakPoint {
         margin: 0 0 0 0.7rem;
+        width: 5rem;
+        height: 1.5rem;
       }
 
       &:hover {

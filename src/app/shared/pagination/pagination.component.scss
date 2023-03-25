@@ -1,4 +1,4 @@
-@use "/src/styles/variables" as *;
+@use "/src/styles/index" as *;
 
 .mat-paginator {
   display: flex;
@@ -8,6 +8,11 @@
   border-radius: 1rem !important;
   height: 3rem;
   background-color: $color-darkBlue;
-  font-size: $f-size-small;
+  font-size: 0.4rem;
   font-family: $f-family-poppins;
+
+  @include mobileMinBreakPoint {
+    flex-direction: row;
+    font-size: $f-size-small;
+  }
 }
