@@ -2,9 +2,9 @@
   <div class="episodes-wrap">
     <form class="episodes__filter" [formGroup]="formGroup">
       <label for="name">Name</label>
-      <input type="text" formControlName="name" />
-      <label for="name">Episode</label>
-      <input type="text" formControlName="episode" />
+      <input type="text" formControlName="name" id="name" />
+      <label for="episode">Episode</label>
+      <input type="text" formControlName="episode" id="episode" />
       <button (click)="update()">Search</button>
     </form>
 

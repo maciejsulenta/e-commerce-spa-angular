@@ -71,16 +71,16 @@
       font-family: $f-family-poppins;
       color: $color-darkBlue;
 
-      @include mobileMinBreakPoint {
-        margin: 0 0 0 0.7rem;
-      }
-
       &:hover {
         background-color: $color-wheat;
       }
 
       &:active {
         transform: scale(1.1);
+      }
+
+      @include mobileMinBreakPoint {
+        margin: 0 0 0 0.7rem;
       }
     }
 
